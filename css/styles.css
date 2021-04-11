@@ -46,18 +46,7 @@ tr:nth-child(3n) td {
   border-bottom:solid ;
 }
 
-/*tr{
-	padding: 0px;
-    margin: 0px;
-}
-
-td {
-	height: 40px;
-	width: 40px;
-    border: groove;
-}*/
-
-.table_but{
+.empty_cell{
 	height: 100%;
 	width: 100%;
     margin : 0;
@@ -69,8 +58,36 @@ td {
   	font-family: sans-serif;
 }
 
-.table_but:hover {
+.empty_cell:hover {
     background-color: gray;
+}
+
+.cell_shaded{
+	height: 100%;
+	width: 100%;
+    margin : 0;
+    padding : 0;
+    display: block;
+    border: none;
+    background-color: DarkSeaGreen;
+    font-size: 23px;
+  	font-family: sans-serif;
+}
+
+.cell_shaded:hover {
+    background-color: gray;
+}
+
+.current_selected_cell {
+	height: 100%;
+	width: 100%;
+    margin : 0;
+    padding : 0;
+    display: block;
+    border: none;
+    background-color: DarkGreen;
+    font-size: 23px;
+  	font-family: sans-serif;
 }
 
 body {
