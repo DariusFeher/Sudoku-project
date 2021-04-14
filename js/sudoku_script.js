@@ -27,6 +27,7 @@ function newGame(no_digits_to_be_removed) {
 	fillRemaining(0, 3, board);
 
 	solution_board = getBoardCopy(board);
+	console.log(solution_board);
 
 	removeKDigits(no_digits_to_be_removed, board);
 
@@ -195,31 +196,17 @@ function checkIfSafe(row, col, digit) {
 }
 
 function fillRemaining(i, j, board) {
-    if (j >= 9 && i < 8) {
-        i++;
-        j = 0;
+    if (j == 9 && i == 8) {
+    	return true;
     }
 
-    if (i >= 9 && j >= 9) {
-        return true;
+    if (j == 9) {
+    	i++;
+    	j = 0;
     }
 
-    if (i < 3) {
-        if (j < 3) {
-            j = 3;
-        }
-    } else if (i < 6) {
-        if (j == Math.floor(i / 3) * 3) {
-            j += 3;
-        }
-    } else {
-        if (j == 6) {
-            i++;
-            j = 0;
-            if (i >= 9) {
-                return true;
-            }
-        }
+    if (board[i][j] > 0) {
+    	return fillRemaining(i, j + 1, board);
     }
 
     for (var digit = 1; digit <= 9; digit++) {
